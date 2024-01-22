@@ -4,38 +4,41 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 
 opcao = ''
+df_netflix = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/NFLX?period1=1022112000&period2=1705881600&interval=1d&events=history&includeAdjustedClose=true')
+df_meta = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/META?period1=1337299200&period2=1705881600&interval=1d&events=history&includeAdjustedClose=true')
+df_google = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/GOOG?period1=1092873600&period2=1705881600&interval=1d&events=history&includeAdjustedClose=true')
 
 def Netflix(): 
-    df = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/NFLX?period1=1514764800&period2=1681948800&interval=1d&events=history&includeAdjustedClose=true')
-    df['Date'] = pd.to_datetime(df['Date'])
-    dates = df['Date'].values
+    dados = (df_netflix)
+    df_netflix['Date'] = pd.to_datetime(df_netflix['Date'])
+    dates = df_netflix['Date'].values
     sns.set_style('darkgrid')
     plt.figure(figsize=(12, 6))
-    sns.lineplot(x='Date', y='Close', data=df)
-    plt.title('Preço do fechamento das ações da Netflix ')
+    sns.lineplot(x='Date', y='Close', data=df_netflix)
+    plt.title('Preço do fechamento das ações da Netflix (2004 até 2024) ')
     plt.xlabel('Data')
     plt.ylabel('Preço de fechamento (USD)')
     plt.show()
   
 def Meta():
-    df = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/GOOG?period1=1514764800&period2=1681948800&interval=1d&events=history&includeAdjustedClose=true')
-    df['Date'] = pd.to_datetime(df['Date'])
-    dates = df['Date'].values
+    dados = (df_meta)
+    df_meta['Date'] = pd.to_datetime(df_meta['Date'])
+    dates = df_meta['Date'].values
     sns.set_style('darkgrid')
     plt.figure(figsize=(12, 6))
-    sns.lineplot(x='Date', y='Close', data=df)
-    plt.title('Preço do fechamento das ações da Meta Platforms, Inc. (2018 até 2023)')
+    sns.lineplot(x='Date', y='Close', data=df_meta)
+    plt.title('Preço do fechamento das ações da Meta Platforms, Inc. (2012 até 2024)')
     plt.xlabel('Data')
     plt.ylabel('Preço de fechamento (USD)')
     plt.show()
 
 def Google():
-    df = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/GOOG?period1=1514764800&period2=1681948800&interval=1d&events=history&includeAdjustedClose=true')
-    df['Date'] = pd.to_datetime(df['Date'])
-    dates = df['Date'].values
+    dados = (df_google)
+    df_google['Date'] = pd.to_datetime(df_google['Date'])
+    dates = df_google['Date'].values
     sns.set_style('darkgrid')
     plt.figure(figsize=(12, 6))
-    sns.lineplot(x='Date', y='Close', data=df)
+    sns.lineplot(x='Date', y='Close', data=df_google)
     plt.title('Preço do fechamento das ações da Google (2018 até 2023)')
     plt.xlabel('Data')
     plt.ylabel('Preço de fechamento (USD)')
