@@ -1,11 +1,10 @@
 import pandas as pd
 import plotly.express as px
-
+import plotly.io as pio
 #Grafico de linhas 
 def plotar_dados_acoes(df, nome_acao):
     fig = px.line(df, x='Date', y='Volume', title=f'Desempenho da Ação {nome_acao}', template='plotly_dark')
-    fig.show()
-
+    pio.show(fig)
 #Importando os dados em CSV 
 opcao = ''
 df_netflix = pd.read_csv('https://query1.finance.yahoo.com/v7/finance/download/NFLX?period1=1022112000&period2=1705881600&interval=1d&events=history&includeAdjustedClose=true')
