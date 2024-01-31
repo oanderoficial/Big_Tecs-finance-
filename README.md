@@ -17,6 +17,3 @@ Programa que consome a API do Yahoo Finanças, e utiliza as bibliotecas pandas, 
 ![newplot(2)](https://github.com/oanderoficial/Big_Tecs-finance-/assets/32654298/896356ca-3795-42c3-8d28-553a4a95d15a)
 
 
-
-
-Novos updates em breve. 
