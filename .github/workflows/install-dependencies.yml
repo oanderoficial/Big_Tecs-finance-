@@ -3,7 +3,7 @@ name: Install Python Dependencies
 on: 
   push: 
     branches:
-      -main 
+      - main 
 
 jobs: 
   install-dependencies: 
