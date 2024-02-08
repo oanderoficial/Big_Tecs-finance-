@@ -20,6 +20,6 @@ jobs:
           
       - name: Install dependencies 
         run: | 
-        python -m pip install --upgrade pip 
-        pip install pandas plotly seaborn matplotlib
+          python -m pip install --upgrade pip 
+          pip install pandas plotly seaborn matplotlib
 
